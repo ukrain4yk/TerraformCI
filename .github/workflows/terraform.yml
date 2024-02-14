@@ -47,6 +47,7 @@ name: 'Terraform'
 on:
   push:
     branches: [ "main" ]
+    paths: '**.tf'
 
 permissions:
   contents: read
@@ -54,8 +55,6 @@ permissions:
 jobs:
   terraform:
     name: 'Terraform'
-    runs-on: ubuntu-latest
-    environment: production
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
